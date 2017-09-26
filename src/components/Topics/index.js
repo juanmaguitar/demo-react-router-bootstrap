@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import { Nav, NavItem } from 'react-bootstrap'
 
+import './styles.css'
 import Topic from '../Topic'
 
 function handleSelect (eventKey, event) {
@@ -11,16 +12,16 @@ function handleSelect (eventKey, event) {
 
 const Topics = ({ match }) => (
   <div>
-      <sidebar>
+      <div className='Topics-sidebar-left'>
         <Nav bsStyle="pills" stacked activeKey={1} onSelect={handleSelect}>
           <NavItem eventKey={1} href="/home">NavItem 1 content</NavItem>
           <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
           <NavItem eventKey={3} disabled>NavItem 3 content</NavItem>
         </Nav>
-      </sidebar>
-      <div>
-      <h2>Topics</h2>
-      <ul>
+      </div>
+      <div className='Topics-sidebar-left'>
+        <h2>Topics</h2>
+        <ul>
         <li>
             <Link to={`${match.url}/rendering`}>
             Rendering with React
@@ -36,12 +37,12 @@ const Topics = ({ match }) => (
             Props v. State
             </Link>
         </li>
-      </ul>
+        </ul>
 
-      <Route path={`${match.url}/:topicId`} component={Topic}/>
-      <Route exact path={match.url} render={() => (
-        <h3>Please select a topic.</h3>
-      )}/>
+        <Route path={`${match.url}/:topicId`} component={Topic}/>
+        <Route exact path={match.url} render={() => (
+          <h3>Please select a topic.</h3>
+        )}/>
       </div>
   </div>
 )

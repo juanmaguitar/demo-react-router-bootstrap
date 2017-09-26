@@ -1,0 +1,13 @@
+[class^="Topics-sidebar"] {
+  height: 100vh;
+
+}
+.Topics-sidebar-left {
+  width: 20%;
+  float: left;  
+}
+
+.Topics-sidebar-right {
+  width: 80%;
+  float: right;
+}
